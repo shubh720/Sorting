@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+ 
+ int n;
+ cin >> n;
+ 
+ int *ar = new int[n];
+ for(int i=0;i<n;i++) cin >> ar[i];
+
+ int i = 0;
+    while(i <= n){
+       if(i > 0 && ar[i-1] > ar[i]) swap(ar[i-1],ar[i]);
+       if(i < n && ar[i+1] > ar[i]) swap(ar[i+1],ar[i]);
+       i+=2; 
+    }
+ 
+  for(int j=0;j<n;j++) cout << ar[j] << " ";
+
+  return 0; 
+}
